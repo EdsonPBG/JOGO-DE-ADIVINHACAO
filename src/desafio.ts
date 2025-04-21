@@ -8,8 +8,8 @@ function GerarNumeros(min:number, max:number){
     return Math.floor(Math.random() * (max - min + 1) + min); 
 }
 
-
 //-------------- MENU -----------------------------------------------------------------------------
+
 // Para criar um menu, usei um do - while como loop
 do{
     console.log("\x1bc"); //Nesta linha apaga tudo do terminal assim que inicia o loop
@@ -22,6 +22,7 @@ do{
             const jogador = readonlineSync.questionInt("Faca sua escolha "); //Variavel que recebe a escolha do jogador
         //Neste bloco de código uso um switch - case para controle de fluxo que pega a escolha do jogador (armazenada em 'jogador') e direciona para o case correspondente.
         switch (jogador) {
+                
             // ------------------- NIVEL FÁCIL ---------------------------------------------------------------------------------------
             case 1:
                 //Neste bloco esta algumas variaveis que ajudam no case 1
@@ -36,7 +37,7 @@ do{
                                     console.log(`Parabens voce acertou! O numero secreto era: ${numeroSecretoNF}`);
                                     console.log(`Tentativas: ${tentativaAtualNF}/${maxTentativasNF}`);
                                         acertouNF = true;
-                                        break; // SAIR DO LOOP APÓS ACERTAR
+                                            break; // SAIR DO LOOP APÓS ACERTAR
                                 }
                                 if(escolha > numeroSecretoNF) { //Verifica se escolha é maior que o numeroSecretoNF, se for, imprime o bloco de codigo
                                     console.log("Tente novamente com menor numero");
@@ -51,12 +52,12 @@ do{
                                         let mudarNivel = readonlineSync.question("Deseja mudar de nivel? (sim/nao): "); //Cria uma variavel que recebe a resposta do jogador se quer mudar de nivel
                                             if(mudarNivel.toLowerCase() == "sim"){ //Se a resposta for sim, o jogador e direcionado para o menu, se não, finaliza o jogo
                                                 console.log("Redirecionando para o menu!");
-                                                    readonlineSync.keyInPause();
-                                                    opcao = -1;
+                                                        readonlineSync.keyInPause();
+                                                            opcao = -1;
                                             }else {
                                                 console.log("Voltando ao menu.");
-                                                readonlineSync.keyInPause();
-                                                opcao = -1;
+                                                    readonlineSync.keyInPause();
+                                                        opcao = -1;
                                             }
                                     } else { // Se o loop terminou por falta de tentativas
                                         console.log(`Suas tentativas acabaram! O numero secreto era: ${numeroSecretoNF}`);
@@ -70,7 +71,7 @@ do{
             case 2:
                 //Neste bloco esta algumas variaveis que ajudam no case 2
                 let tentativaAtualNM = 1; //Tentativa inicia no 1
-                const maxTentativasNM = 4; //Max de tentativas são 4
+                const maxTentativasNM = 3; //Max de tentativas são 3
                 let acertouNM = false; //Ajuda na verificação se o jogador acertou ou não (inicia com false para sinalizar que ele não acertou!!)
                 const numeroSecretoNM = GerarNumeros(1,10); //Cria uma variavel para armazenar a função, ajuda a não ficar chamando a função
                     do{ //loop de como vai funcionar a verificação de todo o case 2
@@ -80,7 +81,7 @@ do{
                                     console.log(`Parabens voce acertou! O numero secreto era: ${numeroSecretoNM}`);
                                     console.log(`Tentativas: ${tentativaAtualNM}/${maxTentativasNM}`);
                                         acertouNM = true;
-                                        break; //SAIR DO LOOP APÓS ACERTAR
+                                            break; //SAIR DO LOOP APÓS ACERTAR
                                 }
                                 if(escolha > numeroSecretoNM) { //Verifica se escolha é maior que o numeroSecretoNM, se for, imprime o bloco de codigo
                                     console.log("Tente novamente com menor numero");
@@ -91,16 +92,16 @@ do{
                                         tentativaAtualNM++; //Adiciona +1 na variavel a cada loop, tanto no acerto, como no erro
                     } while (tentativaAtualNM <= maxTentativasNM && !acertouNM); //Do - while finaliza se a variavel tentativaAtualNM for menor igual ao maximo e se o acertouNM for diferente de true
 
-                                if(acertouNM) { // Verifica se o jogador acertou
+                                if(acertouNM) { // Verifica se o jogador acertou APÓS o loop
                                     let mudarNivel = readonlineSync.question("Deseja mudar de nivel? (sim/nao): "); //Cria uma variavel que recebe a resposta do jogador se quer mudar de nivel
                                         if(mudarNivel.toLowerCase() == "sim"){ //Se a resposta for sim, o jogador e direcionado para o menu, se não, finaliza o jogo
                                             console.log("Redirecionando para o menu!");
-                                            readonlineSync.keyInPause();
-                                                opcao = -1;
+                                                readonlineSync.keyInPause();
+                                                    opcao = -1;
                                         }else {
                                             console.log("Voltando ao menu.");
-                                            readonlineSync.keyInPause();
-                                            opcao = -1;
+                                                readonlineSync.keyInPause();
+                                                    opcao = -1;
                                         }
                                 } else { // Se o loop terminou por falta de tentativas
                                     console.log(`Suas tentativas acabaram! O numero secreto era: ${numeroSecretoNM}`);
@@ -114,7 +115,7 @@ do{
             case 3:
             //Neste bloco esta algumas variaveis que ajudam no case 3
                 let tentativaAtualND = 1; //Tentativa inicia no 1
-                const maxTentativasND = 4; //Max de tentativas são 4
+                const maxTentativasND = 3; //Max de tentativas são 
                 let acertouND = false; //Ajuda na verificação se o jogador acertou ou não (inicia com false para sinalizar que ele não acertou!!)
                 const numeroSecretoND = GerarNumeros(1,50); //Cria uma variavel para armazenar a função, ajuda a não ficar chamando a função
                     do{ //loop de como vai funcionar a verificação de todo o case 3
@@ -124,7 +125,7 @@ do{
                                     console.log(`Parabens voce acertou! O numero secreto era: ${numeroSecretoND}`);
                                     console.log(`Tentativas: ${tentativaAtualND}/${maxTentativasND}`);
                                         acertouND = true;
-                                        break; //SAIR DO LOOP APÓS ACERTAR
+                                            break; //SAIR DO LOOP APÓS ACERTAR
                                 }
                                 if(escolha > numeroSecretoND) { //Verifica se escolha é maior que o numeroSecretoND, se for, imprime o bloco de codigo
                                     console.log("Tente novamente com menor numero");
@@ -139,12 +140,12 @@ do{
                                 let mudarNivel = readonlineSync.question("Deseja mudar de nivel? (sim/nao): "); //Cria uma variavel que recebe a resposta do jogador se quer mudar de nivel
                                     if(mudarNivel.toLowerCase() == "sim"){ //Se a resposta for sim, o jogador e direcionado para o menu, se não, finaliza o jogo
                                         console.log("Redirecionando para o menu!");
-                                        readonlineSync.keyInPause();
-                                            opcao = -1;
+                                            readonlineSync.keyInPause();
+                                                opcao = -1;
                                     }else {
                                         console.log("Voltando ao menu.");
-                                        readonlineSync.keyInPause();
-                                        opcao = -1;
+                                            readonlineSync.keyInPause();
+                                                opcao = -1;
                                     }
                             } else { // Se o loop terminou por falta de tentativas
                                 console.log(`Suas tentativas acabaram! O numero secreto era: ${numeroSecretoND}`);
@@ -153,6 +154,7 @@ do{
                                         opcao = -1;
                             }
                 break;
+//------------------------------- SAIR -------------------------------------------------------------------------------------
         case 0:
             //case 0, ao ser escolhido impprime o "Volte sempre" e finaliza o jogo!
             console.log("Volte sempre!!");
