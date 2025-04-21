@@ -24,46 +24,27 @@ do{
         //Neste bloco de código uso um switch - case para controle de fluxo que pega a escolha do jogador (armazenada em 'jogador') e direciona para o case correspondente.
         switch (jogador) {
             // ------------------- NIVEL FÁCIL ---------------------------------------------------------------------------------------
-            case 1:
+           case 1:
                 //Neste bloco esta algumas variaveis que ajudam no case 1
                 let tentativaAtualNF = 1; //Tentativa inicia no 1 
                 const maxTentativasNF = 5; //Max de tentativas são 5
                 let acertouNF = false; //Ajuda na verificação se o jogador acertou ou não (inicia com false para sinalizar que ele não acertou!!)
                 let numeroSecretoNF = GerarNumeros(1,5); //Cria uma variavel para armazenar a função, ajuda a não ficar chamando a função
-                let acertosNF = 0; //Contador de acertos 
                         do{ //loop de como vai funcionar a verificação de todo o case 1
                             const escolha = readonlineSync.questionInt("Insira um numero inteiro entre 1 e 5 para a adivinhacao: "); //Cria uma variavel que pega o numero sujerido pelo jogador
                                 readonlineSync.keyInPause(); //Pausa para o jogador ver sua escolha e em seguida
                                     if(escolha == numeroSecretoNF){ //Faz verificação se escolha é igual ao numeroSecretoNF, se for imprime este bloco de código
                                         console.log(`Parabens voce acertou! O numero secreto era: ${numeroSecretoNF}`); // Imprime a mensagem de parabéns e o número secreto
-                                        acertosNF++; //Incrementa o contador
-                                        console.log(`Acertos consecutivos: ${acertosNF}/3`);
-
-                                        if(acertosNF < 3){
-                                                numeroSecretoNF = GerarNumeros(1,5); //a cada acerto vai ser gerado um novo numero aleatorio
-                                        }
-
-                                           if(acertosNF >= 3){ //Verifica se o jogador acertou 3 ou mais vezes
-                                                console.log(`Voce acertou ${acertosNF} vezes`);
-                                           
                                                  let mudarNivel = readonlineSync.question("Deseja mudar de nivel? (sim/nao): ");  //Cria uma variavel que recebe a resposta do jogador se quer mudar de nivel
                                                     if(mudarNivel.toLowerCase() == "sim"){ //Se a resposta for sim, o jogador e direcionado para o menu, se não, finaliza o jogo
                                                         console.log("Redirecionando para o menu!");
                                                             opcao = -1;
                                                     break;
                                                     }else {
-                                                        console.log("Continuando no nivel facil");
-                                                        acertosNF = 0; // Reseta o contador se o jogador não quiser continuar 
-                                                        acertouNF = false; // Permite que o loop continue para novas tentativas
-                                                            //opcao = 0;
+                                                        console.log("Volte sempre!!");
+                                                            opcao = 0;
                                                     }
-                                            }else {
-                                                    console.log("Tenta acertar mais vezes para mudar de nível!");
-                                                    acertouNF = true; //Permite que o loop continue para as proximas tentativas
                                                 }
-                                            
-                                    }
-                                        
                                     if(escolha > numeroSecretoNF) { //Verifica se escolha é maior que o numeroSecretoNF, se for, imprime o bloco de codigo
                                         console.log("Tente novamente com menor numero");
                                     } else if(escolha < numeroSecretoNF) { //Se for menor, imprime o bloco de código
@@ -71,8 +52,8 @@ do{
                                     }
                                         console.log(`Tentativas: ${tentativaAtualNF}/${maxTentativasNF}`); //Mostra as tentativas e o max de tentativas uma do lado da outra
                                             tentativaAtualNF++; //Adiciona +1 na variavel a cada loop, tanto no acerto, como no erro
-                            } while (tentativaAtualNF <= maxTentativasNF && acertosNF < 3); //Do - while finaliza se a variavel tentativaAtualNF for menor igual ao maximo e se o acertouNF for diferente de true
-                                    if(acertosNF < 3) { //Verifica se o jogador não acertou 3 vezes e imprime a mensagem de fim de tentativas
+                            } while (tentativaAtualNF <= maxTentativasNF && !acertouNF); //Do - while finaliza se a variavel tentativaAtualNF for menor igual ao maximo e se o acertouNF for diferente de true
+                                    if(!acertouNF) { //Verifica se acertou é diferente de true (false) se for, imprime e manda para o menu
                                         console.log(`Suas tentativas acabaram! O numero secreto era: ${numeroSecretoNF}`);
                                         console.log("Direcionando para o menu, para nova tentativa!");
                                             readonlineSync.keyInPause();
