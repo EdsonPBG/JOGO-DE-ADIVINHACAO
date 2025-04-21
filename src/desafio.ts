@@ -73,7 +73,7 @@ do{
                 const maxTentativasNM = 4; //Max de tentativas são 4
                 let acertouNM = false; //Ajuda na verificação se o jogador acertou ou não (inicia com false para sinalizar que ele não acertou!!)
                 const numeroSecretoNM = GerarNumeros(1,10); //Cria uma variavel para armazenar a função, ajuda a não ficar chamando a função
-                    do{ //loop de como vai funcionar a verificação de todo o case 1
+                    do{ //loop de como vai funcionar a verificação de todo o case 2
                         const escolha = readonlineSync.questionInt("Insira um numero inteiro entre 1 e 10 para a adivinhacao: "); //Cria uma variavel que pega o numero sujerido pelo jogador
                             readonlineSync.keyInPause(); //Pausa para o jogador ver sua escolha e em seguida
                                 if(escolha == numeroSecretoNM){ //Faz verificação se escolha é igual ao numeroSecretoNM, se for imprime este bloco de código
@@ -91,7 +91,7 @@ do{
                                         tentativaAtualNM++; //Adiciona +1 na variavel a cada loop, tanto no acerto, como no erro
                     } while (tentativaAtualNM <= maxTentativasNM && !acertouNM); //Do - while finaliza se a variavel tentativaAtualNM for menor igual ao maximo e se o acertouNM for diferente de true
 
-                                if(acertouNM) { // Verifica se o jogador acertou APÓS o loop
+                                if(acertouNM) { // Verifica se o jogador acertou
                                     let mudarNivel = readonlineSync.question("Deseja mudar de nivel? (sim/nao): "); //Cria uma variavel que recebe a resposta do jogador se quer mudar de nivel
                                         if(mudarNivel.toLowerCase() == "sim"){ //Se a resposta for sim, o jogador e direcionado para o menu, se não, finaliza o jogo
                                             console.log("Redirecionando para o menu!");
@@ -117,7 +117,7 @@ do{
                 const maxTentativasND = 4; //Max de tentativas são 4
                 let acertouND = false; //Ajuda na verificação se o jogador acertou ou não (inicia com false para sinalizar que ele não acertou!!)
                 const numeroSecretoND = GerarNumeros(1,50); //Cria uma variavel para armazenar a função, ajuda a não ficar chamando a função
-                    do{ //loop de como vai funcionar a verificação de todo o case 1
+                    do{ //loop de como vai funcionar a verificação de todo o case 3
                         const escolha = readonlineSync.questionInt("Insira um numero inteiro entre 1 e 50 para a adivinhacao: "); //Cria uma variavel que pega o numero sujerido pelo jogador
                             readonlineSync.keyInPause(); //Pausa para o jogador ver sua escolha e em seguida
                                 if(escolha == numeroSecretoND){ //Faz verificação se escolha é igual ao numeroSecretoND, se for imprime este bloco de código
